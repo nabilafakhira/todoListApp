@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TodoListController;
@@ -14,6 +16,9 @@ use App\Http\Controllers\TodoListController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+if (App::environment('production')) {
+  URL::forceScheme('https');
+}
 
 // Route::get('/{path}', function () {
 //     return view('welcome');
