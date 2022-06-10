@@ -36,7 +36,7 @@ class TodoList extends Component{
             <div className='row justify-content-center'>
                 <div className="col-11 mx-2">
                 <table className="table">
-                {todoNotEmpty ? (
+                {(Array.isArray(todoNotEmpty)) ? (
                     <tbody>{todoNotEmpty.map(function (x, i){
                         return <TodoRow key={i} data={x} />
                     })}</tbody>

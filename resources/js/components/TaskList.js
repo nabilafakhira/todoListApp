@@ -34,7 +34,7 @@ class TaskList extends Component{
         return (
             <div className="col-8 mx-2">
                 <table className="table table-hover table-borderless">
-                    {taskNotEmpty ? (
+                    {(Array.isArray(taskNotEmpty)) ? (
                     <tbody>{taskNotEmpty.map(function (x, i){
                         return <TaskRow key={i} data={x} />
                     })}</tbody>
