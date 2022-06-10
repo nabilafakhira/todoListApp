@@ -30,15 +30,15 @@ class TaskList extends Component{
         });
     }
     render(){
+        const taskNotEmpty = this.state.tasks;
         return (
             <div className="col-8 mx-2">
                 <table className="table table-hover table-borderless">
-                    <tbody>
-                    {this.state.tasks.map(function (x, i){
+                    {taskNotEmpty ? (
+                    <tbody>{taskNotEmpty.map(function (x, i){
                         return <TaskRow key={i} data={x} />
-                    })}
-                    
-                    </tbody>
+                    })}</tbody>
+                    ) : ('')}
                 </table>
             </div>
         );

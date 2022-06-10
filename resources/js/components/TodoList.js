@@ -31,15 +31,16 @@ class TodoList extends Component{
         });
     }
     render(){
+        const todoNotEmpty = this.state.todos;
         return (
             <div className='row justify-content-center'>
                 <div className="col-11 mx-2">
                 <table className="table">
-                    <tbody>
-                    {this.state.todos.map(function (x, i){
+                {todoNotEmpty ? (
+                    <tbody>{todoNotEmpty.map(function (x, i){
                         return <TodoRow key={i} data={x} />
-                    })}
-                    </tbody>
+                    })}</tbody>
+                    ) : ('')}
                 </table>
                 </div>
             </div>
