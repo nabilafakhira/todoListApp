@@ -39,7 +39,7 @@ class TaskEdit extends Component {
     }
 
     updateTask = () => {
-        axios.post(`${url}/api/update/task/`, {
+        axios.post(`https://app-mytodolist.herokuapp.com/api/update/task/`, {
             taskId: this.props.modalId,
             taskDesc: this.state.taskDesc
         }).then(() => {
