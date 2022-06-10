@@ -51,22 +51,16 @@ class TodoListController extends Controller
 
   public function updateTodo(Request $request)
       {
-          try
-          {
-              $id = $request->get('todoId');
-              $desc = $request->get('todoDesc');
-  
-              TodoList::where('id', $id)->update([
-                  'desc'   =>  $desc
-              ]);
-  
-              return response()->json(["status" => 200]);
+          $id = $request->get('todoId');
+          $desc = $request->get('todoDesc');
+
+          TodoList::where('id', $id)->update([
+              'desc'   =>  $desc
+          ]);
+
+          return response()->json(["status" => 200]);
           
-          }
-          catch(Exception $e)
-          {
-              Log::error($e);
-          }
+          
       }
 
       public function checkCompleteTask($id){

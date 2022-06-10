@@ -56,9 +56,7 @@ class TaskController extends Controller
 
       public function updateTask(Request $request)
       {
-          try
-          {
-              $id = $request->get('taskId');
+          $id = $request->get('taskId');
               $desc = $request->get('taskDesc');
   
               Task::where('id', $id)->update([
@@ -66,12 +64,7 @@ class TaskController extends Controller
               ]);
   
               return response()->json(["status" => 200]);
-          
-          }
-          catch(Exception $e)
-          {
-              Log::error($e);
-          }
+        
       }
 
       public function show($id)
