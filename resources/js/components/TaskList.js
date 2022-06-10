@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TaskRow from './TaskRow';
+import url from '../url';
 
 class TaskList extends Component{
 
@@ -22,7 +23,7 @@ class TaskList extends Component{
     //get tasks
     getTaskList = () =>{
         let self = this;
-        axios.get('/api/tasks').then(function(response){
+        axios.get(`${url}/api/tasks`).then(function(response){
             self.setState({
                 tasks: response.data
             });

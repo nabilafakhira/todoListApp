@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TodoRow from './TodoRow';
+import url from '../url';
 
 class TodoList extends Component{
 
@@ -23,7 +24,7 @@ class TodoList extends Component{
     getTodoList = () =>{
         let self = this;
         let id = this.props.taskId;
-        axios.get('/api/todos/'+id).then(function(response){
+        axios.get(`${url}/api/todos/${id}`).then(function(response){
             self.setState({
                 todos: response.data
             });

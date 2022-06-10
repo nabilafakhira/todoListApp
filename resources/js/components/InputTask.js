@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import url from '../url';
 
 
 function InputTask() {
@@ -13,7 +14,7 @@ function InputTask() {
     }
 
     const submitForm = () =>{
-        axios.post('/api/store/task',inputs).then((res)=>{
+        axios.post(`${url}/api/store/task`,inputs).then((res)=>{
             navigate('/');
         })
     }

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import InputTodo from "./InputTodo";
 import TodoList from "./TodoList";
+import url from '../url';
 
 
 function TaskDetail() {
@@ -14,7 +15,7 @@ function TaskDetail() {
     },[]);
 
     const getTaskDetails= (id) =>{
-        axios.get('/api/task/'+id).then((res)=>{
+        axios.get(`${url}/api/task/${id}`).then((res)=>{
            setState({
                 id:res.data.id,
                 desc:res.data.desc,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TaskAction from './TaskAction';
+import url from '../url';
 
 class TaskRow extends Component {
 
@@ -9,7 +10,7 @@ class TaskRow extends Component {
     }
 
     completedTask = (task) => {
-        axios.post('/api/task/'+task, {
+        axios.post(`${url}/api/task/${task}`, {
             taskId: this.props.data.id,
         }).then(() => {
             location.reload();

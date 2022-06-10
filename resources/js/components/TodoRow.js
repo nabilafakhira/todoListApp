@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TodoAction from './TodoAction';
+import url from '../url';
 
 class TodoRow extends Component {
 
@@ -16,7 +17,7 @@ class TodoRow extends Component {
     }
 
     completedTodo = (todo) => {
-        axios.post('/api/todo/'+todo, {
+        axios.post(`${url}/api/todo/${todo}`, {
             todoId: this.props.data.id,
         }).then(() => {
             location.reload()

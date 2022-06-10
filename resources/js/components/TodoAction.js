@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoEdit from './modal/TodoEdit';
 import axios from 'axios';
+import url from '../url';
 
 class TodoAction extends Component {
 
@@ -13,7 +14,7 @@ class TodoAction extends Component {
     }
 
     getTodoDetails = (id) => {
-        axios.get('/api/todo/'+id).then((response) => {
+        axios.get(`${url}/api/todo/${id}`).then((response) => {
             this.setState({
                 currentTodoDesc: response.data.desc
             })
@@ -21,7 +22,7 @@ class TodoAction extends Component {
     }
 
     deleteTodo = (todo) => {
-        axios.delete('/api/delete/todo/' + todo).then(() => {
+        axios.delete(`${url}/api/delete/todo/${todo}`).then(() => {
             location.reload();
         })
     }

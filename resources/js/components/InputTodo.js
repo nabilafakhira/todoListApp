@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import url from '../url';
 
 
 function InputTodo(props) {
@@ -13,7 +14,7 @@ function InputTodo(props) {
     }
 
     const submitForm = () =>{
-        axios.post('/api/store/todo',{
+        axios.post(`${url}/api/store/todo`,{
             todoDesc: inputs.desc,
             taskId: props.idTask,
 

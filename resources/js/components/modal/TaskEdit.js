@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import url from '../../url';
 
 class TaskEdit extends Component {
 
@@ -38,7 +39,7 @@ class TaskEdit extends Component {
     }
 
     updateTask = () => {
-        axios.post('/api/update/task/', {
+        axios.post(`${url}/api/update/task/`, {
             taskId: this.props.modalId,
             taskDesc: this.state.taskDesc
         }).then(() => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import TaskEdit from './modal/TaskEdit';
 import axios from 'axios';
+import url from '../url';
 
 class TaskAction extends Component {
 
@@ -14,7 +15,7 @@ class TaskAction extends Component {
     }
 
     getTaskDetails = (id) => {
-        axios.get('/api/task/'+id).then((response) => {
+        axios.get(`${url}/api/task/${id}`).then((response) => {
             this.setState({
                 currentTaskDesc: response.data.desc
             })
@@ -23,7 +24,7 @@ class TaskAction extends Component {
 
 
     deleteTask = (task) => {
-        axios.delete('/api/delete/task/' + task).then(() => {
+        axios.delete(`${url}/api/delete/task/${task}`).then(() => {
             location.reload();
         })
     }

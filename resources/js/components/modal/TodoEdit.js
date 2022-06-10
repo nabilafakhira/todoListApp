@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import url from '../../url';
 
 class TodoEdit extends Component {
 
@@ -38,7 +39,7 @@ class TodoEdit extends Component {
     }
 
     updateTodo = () => {
-        axios.post('/api/update/todo/', {
+        axios.post(`${url}/api/update/todo/`, {
             todoId: this.props.modalId,
             todoDesc: this.state.todoDesc
         }).then(() => {
