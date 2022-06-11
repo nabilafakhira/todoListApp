@@ -39,7 +39,7 @@ class TodoEdit extends Component {
     }
 
     updateTodo = () => {
-        axios.post(`https://app-mytodolist.herokuapp.com/api/update/todo/`, {
+        axios.post(`${url}/api/update/todo/`, {
             todoId: this.props.modalId,
             todoDesc: this.state.todoDesc
         }).then(() => {
