@@ -1,3 +1,3 @@
-const url ="//app-mytodolist.herokuapp.com";
+const url ="https://app-mytodolist.herokuapp.com";
 
 export default url
